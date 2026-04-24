@@ -1,12 +1,18 @@
 export interface Snapshot {
-  id: string;
   name: string;
   createdAt: string;
-  env: Record<string, string>;
-  description?: string;
-  tags?: string[];
+  vars: Record<string, string>;
+  tags: string[];
 }
 
 export interface SnapshotStore {
   snapshots: Record<string, Snapshot>;
+  history?: {
+    entries: Array<{
+      snapshotName: string;
+      action: 'save' | 'restore' | 'delete';
+      timestamp: string;
+      varCount: number;
+    }>;
+  };
 }
