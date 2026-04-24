@@ -1,0 +1,10 @@
+node_modules/
+*.tsbuildinfo
+.cache/
+npm-debug.log*
+out/
+*.log
+*.js.map
+build/
+coverage/
+dist/
